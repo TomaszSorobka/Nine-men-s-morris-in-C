@@ -1,0 +1,103 @@
+OPIS STRUKTURY PROGRAMU
+-------------------------------------------------------------------------------------------------------------------
+Program podzielony jest na 4 moduły: main.c,  gtkdesign.c, logikagry.c, win-fifo.c
+
+1. main.c 
+	Moduł main.c spaja ze sobą wszystkie moduły. 
+
+	Funkcje:
+		- main() jest najważniejszą funkcją obsługującą cały program. Inicjalizowane są w niej Pipes (które
+		odpowiadają za komunikację), tworzone jest okno programu, wywoływana jest funkcja tworząca menu, 
+		gtk_main() oraz inicjowany jest rekurencyjne wywołanie funkcji pobierz_tekst.
+
+		- zmienneInit() inicjuje wartości zmiennych przechowujących dane rozgrywki
+
+		- pokazBlad() służy do informowania użytkownika o błędach i innych komunikatach
+
+		- zakoncz() zamyka program
+
+		- zmienKolor() jest bardzo rozbudowaną funkcją, która interpretuje nacisnięte przez graczy przyciski
+		i decyduje jakie informacje wysłać do drugiej kopii programu. Zawiera w sobie bardzo dużo poleceń
+		warunkowych, które implementują zasady gry.
+
+		- przekaz_tekst() służy do wysyłania informacji do drugiej kopii programu
+
+		- pobierz_tekst() pobiera informacje od drugiej kopii programu i odpowiednio je interpretuje, nanosi
+		zmiany na planszy, zmiennych itp.
+
+
+2. gtkdesign.c
+	Moduł gtkdesign zawiera funkcje i struktury odpowiedzialne za graficzny wygląd i funkcjonalność programu. 
+
+	Funkcje:
+		- inicjalizacjaMenu() inicjalizuje wszystkie GtkWidgety potrzebne do stworzenia menu i odpowiednio
+		je pozycjonuje w oknie
+
+		- graj() inicjalizuje wszystkie GtkWidgety potrzebne do stworzenia planszy i pola gry i odpowiednio
+		je pozycjonuje w oknie
+
+		- load_css() jest odpowiedzialna za załadowanie pliku style.css i zaaplikowanie stylowania
+
+		- koniecGry() kończy grę i przenosi gracza z powrotem do Menu
+
+		- removeStyle() usuwa style załadowane z pliku style.css (używane w celu usunięcia koloru z pól)
+
+		- zwrocNumer() jest funkcją pomocniczą do stworzenia planszy gry
+
+		- instrukcja() inicjalizuje wszystkie GtkWidgety potrzebne do stworzenia instrukcji i odpowiednio
+		je pozycjonuje w oknie
+
+		- powrot() przenosi gracza z powrotem do pola Menu
+
+	Struktury:
+
+		struct przycisk {
+   			char *id;
+	    		gint posX,lenX,posY,lenY;
+		} 
+		Struktura użyta została do stworzenia przycisków reprezentujących pola na planszy.
+
+		struct liniaH {
+	    		int posX,posY;
+		}
+		Struktura użyta została do wyświetlenia w odpowiednich miejscach poziomych kresek łączących pola
+		na planszy gry.
+
+		struct liniaV {
+	    		int posX,posY;
+		}
+		Struktura użyta została do wyświetlenia w odpowiednich miejscach poniowych kresek łączących pola
+		na planszy gry.
+
+3. logikagry.c
+	Moduł logikagry.c zawiera niezależne funkcje i struktury odpowiedzialne za system rozgrywki. 
+
+	Funkcje:
+		- planszaInit() inicjalizuje wartości w dwuwymiarowej tablicy, która przechowuje obecny stan gry
+
+		- czyMlynek() zwraca 1 gdy ruch, który wykonał gracz utworzył młynek na polu gry, zwraca 0 w.p.p.
+		
+		- czyMlynekWyj() funkcjonalność taka sama jak funkcji powyżej z wyjątkiem, że zwraca 1 wtedy 
+		gdy wszystkie piony przeciwnika są w młynku 
+
+		- czyPoprawnyRuch() zwraca 1 gdy ruch, który wykonał gracz jest poprawny, czyli np. czy jest na
+		sąsiednie pole, czy pole, na które chce się przesunąć jest wolne itp.
+
+	Struktury: 
+
+		char plansza[7][7] = {
+			{'P', '+', '+', 'P', '+','+','P'},
+			{'+', 'P', '+', 'P', '+','P','+'},
+			{'+', '+', 'P', 'P', 'P','+','+'},
+			{'P', 'P', 'P', 'X', 'P','P','P'},
+			{'+', '+', 'P', 'P', 'P','+','+'},
+			{'+', 'P', '+', 'P', '+','P','+'},
+			{'P', '+', '+', 'P', '+','+','P'},
+		};
+	Struktura przechowuje obecny stan planszy.
+
+4. win-fifo.c
+	Moduł win-fifo.c zawiera funkcje i struktury odpowiedzialne za komunikację dwóch kopii programów przy pomocy
+	plików kolejkowych. Moduł nie został napisany przeze mnie i nie był modyfikowany.
+		
+

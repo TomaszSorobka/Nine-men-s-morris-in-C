@@ -1,0 +1,50 @@
+OPIS GRY
+------------------------------------------------------------------------------------------------------------------
+Młynek to gra dla dwóch osób rozgrywana na planszy składającej się z 24 pól,
+rozmieszczonych na bokach trzech kwadratów różnej wielkości (duży, średni, mały), z których każdy kolejny
+umieszczony jest w poprzednim. Celem gry jest wyeliminowanie pionów przeciwnika.
+
+Początkowo każdy z dwóch graczy dysponuje na ręku 9 pionami; jeden koloru czerwonego, drugi - niebieskimi.
+
+Jako pierwszy ruch wykonuje grający pionami czerwonymi, umieszczając na dowolnym polu swój pion,
+po czym gracze wykonują na zmianę kolejne ruchy umieszczając swoje piony na wolnych polach planszy.
+Ta część gry nazywana jest fazą 1.
+
+Kiedy gracze wprowadzą swoje wszystkie piony do gry, wykonanie ruchu polega na przestawieniu wybranego ze swoich
+pionów znajdujących się na planszy na sąsiednie wolne pole. Za sąsiednie pola uznaje się pola połączone przerywaną
+linią lub będące bezpośrednio obok siebie. Ta częśc gry nazywana jest fazą 2.
+
+W przypadku, kiedy graczowi pozostają na planszy tylko trzy piony, może on przestawiać wybrane ze swoich pionów
+na jakiekolwiek wolne pola, nie koniecznie sąsiednie.
+
+Jeśli któremuś z graczy uda się ustawić swoje trzy piony w linii (uzyska tzw. "młynek"), to może zdjąć z planszy
+dowolny pion przeciwnika, o ile nie jest on ustawiony w młynku.
+
+Koniec gry następuje w sytuacji, kiedy jeden z graczy pozostaje z dwoma pionami na planszy.
+
+------------------------------------------------------------------------------------------------------------------
+
+PORUSZANIE SIĘ PO MENU ORAZ KONTROLA PIONÓW
+------------------------------------------------------------------------------------------------------------------
+Po uruchomieniu programu wyświetli się użytkownikowi Menu gry zawierające przywitanie, tematyczną grafikę oraz
+2 przyciski: "Instrukcja" i "Graj".
+
+Po kliknięciu na przycisk "Instrukcja" wyświetli się użytkownikowi skrócona instrukcja gry, jakby miał on potrzebę
+przypomnienia sobie zasad, oraz przycisk "Powrot", który przeniesie użytkownika z powrotem do Menu.   
+
+Po kliknięciu na przycisk "Graj" przed graczem pojawi się napis wskazujący na obecną fazę gry, przycisk
+"Poddaj sie" oraz plansza gry. Gra rozpocznie się, gdy obaj gracze klikną w przycisk graj. 
+W fazie pierwszej wprowadzanie pionów do gry następuje to poprzez kliknięcie przez gracza na dowolne puste pole
+na planszy. 
+
+Po 18 takich ruchach, pojawi się graczom komunikat, informujący o przejściu do następnej fazy gry.
+Wykonanie ruchu w tej fazie następuje poprzez najpierw kliknięcie na pion, który ma zostać przesunięty
+(wówczas podświetli on się wtedy na żółto), a następnie kliknięcie na sąsiednie wolne pole.
+
+W momencie, gdy graczowi uda się stworzyć młynek wyświetli się odpowiedni komunikat oraz będzie mógł on wyeliminowac
+piona przeciwnika poprzez klikniecie na niego.
+
+Program nie pozwoli graczowi na wykonanie nielegalnych ruchów oraz wyświetli w takiej sytuacji odpowiedni komunikat.
+Każdy gracz w każdym momencie po rozpoczęciu rozgrywki może się poddać klikająć przycisk "Poddaj sie".
+Dla każdego użytkownika wyświetli się wtedy odpowiedni komunikat i zostaną oni przeniesieni do Menu, gdzie 
+mogą oni rozpocząć grę ponownie.

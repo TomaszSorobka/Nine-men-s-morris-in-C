@@ -1,0 +1,13 @@
+INSTRUKCJA URUCHOMIENIA PROGRAMU:
+1. Rozpakować archiwum "MlynekTomaszSorobka"
+
+2. Skompilować projekt w terminalu z poziomu folderu "kod" poleceniem: 
+gcc -std=c99 -Wall -o mlynek main.c win-fifo.c logikagry.c gtkdesign.c `pkg-config gtk+-3.0 --cflags --libs`
+
+w moim przypadku `pkg-config gtk+-3.0 --cflags --libs` zwraca:
+-IC:/msys64/mingw64/bin/../include/gtk-3.0 -IC:/msys64/mingw64/bin/../include/pango-1.0 -IC:/msys64/mingw64/bin/../include -IC:/msys64/mingw64/bin/../include/glib-2.0 -IC:/msys64/mingw64/bin/../lib/glib-2.0/include -IC:/msys64/mingw64/bin/../include/harfbuzz -IC:/msys64/mingw64/bin/../include/freetype2 -IC:/msys64/mingw64/bin/../include/libpng16 -mms-bitfields -IC:/msys64/mingw64/bin/../include/fribidi -IC:/msys64/mingw64/bin/../include/cairo -IC:/msys64/mingw64/bin/../include/lzo -IC:/msys64/mingw64/bin/../include/pixman-1 -mms-bitfields -mms-bitfields -mms-bitfields -mms-bitfields -mms-bitfields -mms-bitfields -mms-bitfields -IC:/msys64/mingw64/bin/../include/gdk-pixbuf-2.0 -mms-bitfields -mms-bitfields -mms-bitfields -IC:/msys64/mingw64/bin/../include/atk-1.0 -mms-bitfields -mms-bitfields -mms-bitfields -pthread -mms-bitfields -LC:/msys64/mingw64/bin/../lib -lgtk-3 -lgdk-3 -lz -lgdi32 -limm32 -lshell32 -lole32 -Wl,-luuid -lwinmm -ldwmapi -lsetupapi -lcfgmgr32 -lhid -lpangowin32-1.0 -lpangocairo-1.0 -lpango-1.0 -lharfbuzz -latk-1.0 -lcairo-gobject -lcairo -lgdk_pixbuf-2.0 -lgio-2.0 -lgobject-2.0 -lglib-2.0 -lintl
+
+3. Następnie stworzyć dwie kopie programu w dwóch terminalach odpowiednio poleceniem:
+mlynek.exe A
+oraz
+mlynek.exe B 

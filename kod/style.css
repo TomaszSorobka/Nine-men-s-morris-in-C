@@ -1,0 +1,50 @@
+window
+{
+	background-color: #ffe5b4;
+}
+
+button {
+	background-color: red;
+}
+
+.circular{
+	background-color: black;
+	color: black;
+	border: 0px solid #ff0000;
+}
+
+.A{
+	border: 15px solid #ff0000;
+}
+
+.B{
+	border: 15px solid #0000ff;
+}
+
+.yellow{
+	border: 5px solid #ffff00;
+}
+
+.label {
+  color: white;
+  padding: 8px;
+  border: 55px solid #ffe5b4;
+  background-color: #753742;
+  font-size: 20px;
+}
+
+.menuBtn {
+	border: 5px solid #753742;
+	background-color: white;
+	font-size: 25px;
+}
+
+.concede {
+	border: 5px solid #000000;
+}
+
+.powrotBtn {
+	border: 5px solid #753742;
+	background-color: white;
+	font-size: 20px;
+}
